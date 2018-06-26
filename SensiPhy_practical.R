@@ -97,3 +97,12 @@ sensi_plot(tree_cont,graphs="sigsq")
 sensi_plot(tree_cont,graphs="optpar")
 #Plot
 sensi_plot(tree_cont) 
+
+
+# Use a different evolutionary model or transformation (e.g. Pagel's lambda)
+tree_binary_lambda<-tree_discrete(data = adultMass_binary,phy = primates$phy,
+                                  model = "SYM",transform = "lambda",n.tree = 30,n.cores = 2,track = TRUE)
+summary(tree_binary_lambda)
+
+sensi_plot(tree_binary_lambda) 
+
