@@ -77,7 +77,9 @@ summary(tree_binary)
 sensi_plot(tree_binary,graphs="q12")
 sensi_plot(tree_binary,graphs="q21")
 
-sensi_plot(tree_binary) 
+sensi_plot(tree_binary,graphs="q11")
+
+
 
 
 #Continuous characters 
