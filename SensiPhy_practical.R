@@ -1,17 +1,24 @@
 
+
 #Install sensiphy from github
 library(devtools)
 devtools::install_github("paternogbc/sensiPhy")
 
 # Load data
-data(alien)
+alien <- data
 # This analysis needs a multiphylo file:
-class(alien$phy)
+class(alien$phy) #Checking it's multiphylo
 alien$phy
-# run PGLS accounting for phylogenetic uncertain:
-tree <- tree_phylm(log(gestaLen) ~ log(adultMass), phy = alien$phy, 
+
+#Load Tree phylum (tree_phylum doc)
+#
+#Run PGLS accounting for phylogenetic uncertain
+tree <- tree_phylm(log(gestaLen) ~ log(adultMass), phy = data$phy, 
                    data = alien$data, n.tree = 30)
 # To check summary results:
 summary(tree)
 # Visual diagnostics
 sensi_plot(tree)
+
+View(alien)
+
