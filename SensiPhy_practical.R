@@ -17,7 +17,6 @@ class(alien.phy$phy) #Checking it's multiphylo
 alien.phy$phy
 
 #Load Tree phylum (tree_phylum doc)
-#
 #Run PGLS accounting for phylogenetic uncertain
 tree <- tree_phylm(log(gestaLen) ~ log(adultMass), phy = data$phy, 
                    data = alien.phy$data, n.tree = 30)
@@ -105,4 +104,15 @@ tree_binary_lambda<-tree_discrete(data = adultMass_binary,phy = primates$phy,
 summary(tree_binary_lambda)
 
 sensi_plot(tree_binary_lambda) 
+
+
+#Paper example 
+data <- primates.data
+data.frame <- primates.data
+fit2 <- tree_clade_phylm(log(sexMaturity) ~ log(adultMass))
+
+is.data.frame(primates.data)
+
+
+
 
