@@ -4,7 +4,7 @@ library(ggplot2)
 library(devtools)
 devtools::install_github("paternogbc/sensiPhy")
 
-
+#Run all of the functions on my github first
 
 #1. tree_phylm: tree method for phylogenetic linear regression
 
