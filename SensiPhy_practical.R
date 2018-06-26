@@ -1,4 +1,4 @@
-
+library(ggplot2)
 
 #Install sensiphy from github
 library(devtools)
@@ -21,4 +21,5 @@ summary(tree)
 sensi_plot(tree)
 
 View(alien)
+
 
