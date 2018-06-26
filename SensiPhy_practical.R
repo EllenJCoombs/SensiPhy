@@ -80,3 +80,20 @@ sensi_plot(tree_binary,graphs="q21")
 
 sensi_plot(tree_binary) 
 
+
+#Continuous characters 
+# Load data:
+primates
+# Model trait evolution accounting for phylogenetic uncertainty
+adultMass<-primates$data$adultMass
+names(adultMass)<-rownames(primates$data)
+tree_cont<-tree_continuous(data = adultMass,phy = primates$phy,
+                           model = "OU",n.tree=30,n.cores = 2,track = TRUE)
+# Print summary statistics for the transitions rates, aic-values and (if applicable) 
+# optimisation parameter
+summary(tree_cont)
+## Visual diagnostics
+sensi_plot(tree_cont,graphs="sigsq")
+sensi_plot(tree_cont,graphs="optpar")
+#Plot
+sensi_plot(tree_cont) 
