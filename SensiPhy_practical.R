@@ -82,7 +82,7 @@ sensi_plot(tree_binary,graphs="q11")
 
 
 
-#Continuous characters 
+#Continuous characters (body mass)
 # Load data:
 primates
 # Model trait evolution accounting for phylogenetic uncertainty
@@ -108,7 +108,7 @@ summary(tree_binary_lambda)
 sensi_plot(tree_binary_lambda) 
 
 
-#Paper example 
+#Paper example - can't run 
 data <- primates.data
 data.frame <- primates.data
 fit2 <- tree_clade_phylm(log(sexMaturity) ~ log(adultMass))
