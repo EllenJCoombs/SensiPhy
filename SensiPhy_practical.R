@@ -17,7 +17,7 @@ class(alien.phy$phy) #Checking it's multiphylo
 alien.phy$phy
 
 #Load Tree phylum (tree_phylum doc)
-#Run PGLS accounting for phylogenetic uncertain
+#Run PGLS accounting for phylogenetic uncertainty
 tree <- tree_phylm(log(gestaLen) ~ log(adultMass), phy = data$phy, 
                    data = alien.phy$data, n.tree = 30)
 # To check summary results:
@@ -38,8 +38,9 @@ alien.data$logMass <- log(alien.data$adultMass)
 tree <- tree_physig(trait.col = "logMass", data = alien.data, phy = alien.phy)
 summary(tree)
 sensi_plot(tree)
-sensi_plot(tree, graphs = 1)
-sensi_plot(tree, graphs = 2)
+sensi_plot(tree, graphs = "all")
+#If you want to plot graph one or two etc
+#sensi_plot(tree, graphs = 2)
 
 
 #3. tree_continuous() and tree_discrete: tree method for trait evolution of continous and discrete characters
