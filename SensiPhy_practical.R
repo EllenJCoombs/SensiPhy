@@ -1,4 +1,12 @@
 library(ggplot2)
+library(ape)
+
+install.packages("phylolm")
+library(phylolm)
+library(phytools)
+library(geiger)
+
+
 
 #Install sensiphy from github
 library(devtools)
@@ -31,7 +39,7 @@ View(alien)
 #2. tree_physig(): tree method for phylogenetic signal
 
 # Load data:
-data(alien)
+alien
 # Logtransform data
 alien.data$logMass <- log(alien.data$adultMass) 
 # Run sensitivity analysis:
@@ -41,6 +49,8 @@ sensi_plot(tree)
 sensi_plot(tree, graphs = "all")
 #If you want to plot graph one or two etc
 #sensi_plot(tree, graphs = 2)
+
+sensi_plot(tree, graphs = 1)
 
 
 #3. tree_continuous() and tree_discrete: tree method for trait evolution of continous and discrete characters
